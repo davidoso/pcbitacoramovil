@@ -38,23 +38,23 @@
                         <!--<label for="exampleInputEmail1">Email address</label>-->
                         <div class="input-group mb-3">
                             <div class="input-group-prepend">
-                                <span class="input-group-text rounded-0" id="basic-addon1"><i class="fa fa-user"></i></span>
+                                <span class="input-group-text rounded-0" id="basic-addon1" title="Usuario"><i class="fa fa-fw fa-user"></i></span>
                             </div>
-                            <input type="text" class="form-control rounded-0" name="usuario" placeholder="Usuario" required>
+                            <input type="text" class="form-control rounded-0" id="usuario" name="usuario" placeholder="Usuario" required>
                         </div>
                         <div class="input-group mb-3">
                             <div class="input-group-prepend">
-                                <span class="input-group-text rounded-0" id="basic-addon1"><i class="fa fa-lock"></i></span>
+                                <span class="input-group-text rounded-0" id="basic-addon1" title="Contraseña"><i class="fa fa-fw fa-lock"></i></span>
                             </div>
-                            <input type="password" class="form-control rounded-0" name="contrasena" placeholder="Contraseña" required>
+                            <input type="password" class="form-control rounded-0" id="contrasena" name="contrasena" placeholder="Contraseña" required>
                         </div>
                         <div class="input-group mb-3">
                             <div class="input-group-prepend">
-                                <span class="input-group-text rounded-0" id="basic-addon1"><i class="fas fa-id-badge"></i></span>
+                                <span class="input-group-text rounded-0" id="puesto-icono" title="Puesto"><i class="fa fa-fw fa-id-badge"></i></span>
                             </div>
-                            <input type="text" class="form-control rounded-0" name="puesto" id="puesto" placeholder="Puesto" disabled>
+                            <input type="text" class="form-control rounded-0" id="puesto" name="puesto" placeholder="Puesto" disabled>
                         </div>
-                        <button type="submit" class="btn btn-danger btn-block rounded-0"><i class="fa fa-sign-in-alt"></i> Ingresar</button>
+                        <button type="submit" class="btn btn-danger btn-block rounded-0"><i class="fa fa-fw fa-sign-in-alt"></i> Ingresar</button>
                     </form>
                 </div>
             </div>

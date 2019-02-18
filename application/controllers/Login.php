@@ -98,5 +98,22 @@
             $this->session->sess_destroy();
             redirect('Login');
         }
+
+        public function get_puesto()
+        {
+            $usuario=$this->input->post('usuario');
+
+            $ch = curl_init(); 
+            curl_setopt($ch, CURLOPT_URL, "http://vadaexterno:8080/wsAutEmp/Service1.asmx/Valida_Usuario");
+            curl_setopt($ch, CURLOPT_POST, 1); //se puede comentar y de todos modos jala
+            curl_setopt($ch, CURLOPT_CUSTOMREQUEST,"POST");
+            curl_setopt($ch, CURLOPT_POSTFIELDS,"usuario=$usuario&contrasena=");
+	    	curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1); 
+			$output = curl_exec($ch); // la variable output contiene el json raw
+
+            $arrEmpleado = json_decode($output);
+            $puesto = empty($arrEmpleado) ? 'Usuario no encontrado' : $arrEmpleado[0]->PUESTO;
+            echo json_encode($puesto);
+        }
     }
 ?>

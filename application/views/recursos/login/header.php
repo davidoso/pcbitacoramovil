@@ -6,10 +6,11 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <meta name="description" content="">
         <meta name="author" content="">
+        <base href="<?php echo base_url();?>">
 
         <title>Peña Colorada</title>
 
         <!-- Bootstrap core CSS -->
-        <link href="<?php echo base_url('assets/vendor/css/bootstrap.min.css'); ?>" rel="stylesheet">
+        <link href="assets/vendor/css/bootstrap.min.css" rel="stylesheet">
 
     </head>
