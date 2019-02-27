@@ -1,16 +1,14 @@
     <body>
-        
         <!-- BODY -->
             <div class="container">
-                            
                 <div class="row justify-content-center my-4">
                     <div class="col-md-12">
                         <h2>Registrar nuevo trabajo</h2>
                     </div>
                 </div>
-                
+
                 <form role="form" method="POST" action="<?php echo site_url('Principal/insert_trabajo'); ?>">
-                    
+
                     <div class="row">
                         <div class="col-md-6 mb-3">
                             <label class="font-weight-bold">Familia</label>
@@ -31,30 +29,6 @@
                                 </select>
                             </div>
                         </div>
-                        <!--<div class="col-md-6 mb-3">
-                            <label class="font-weight-bold">Equipo</label>
-                            <div class="input-group">
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text rounded-0" id="basic-addon1"><i class="fas fa-sitemap"></i></span>
-                                </div>
-                                <select class="custom-select rounded-0" id="equipo" name="equipo" required>
-                                    <option selected disabled></option>
-                                <?php
-                                    /*if (isset($equipos))
-                                    {
-                                        foreach($equipos as $e)
-                                        {
-                                    
-                                ?>
-                                    <option value="<?php echo $e->EQUIPO; ?>"><?php echo $e->EQUIPO; ?></option>
-                                <?php
-                                        } // cierra foreach
-                                    } // cierra if que valida si estan asignados los equipos
-                                    */
-                                ?>
-                                </select>
-                            </div>
-                        </div>-->
                         <div class="col-md-6 mb-3">
                             <label class="font-weight-bold">Equipo</label>
                             <div class="input-group">
@@ -86,9 +60,9 @@
                                 </div>
                                 <input type="text" class="form-control rounded-0" name="usuario" placeholder="Clave" aria-describedby="basic-addon1">
                             </div>
-                        </div>-->    
+                        </div>-->
                     </div>
-                        
+
                     <div class="row">
                         <div class="col-md-5 mb-3">
                             <label class="font-weight-bold">Fecha de inicio</label>
@@ -123,7 +97,7 @@
                             </div>
                         </div>
                     </div>
-                    
+
                     <div class="row">
                         <div class="col-md-12 mb-3">
                             <label class="font-weight-bold">Descripción</label>
@@ -135,10 +109,10 @@
                             </div>
                         </div>
                     </div>
-                    
+
                     <div class="row">
                         <div class="col-md-6 mb-3">
-                            <label class="font-weight-bold">Fecha de termino</label>
+                            <label class="font-weight-bold">Fecha de término</label>
                             <div class="input-group">
                                 <div class="input-group-prepend">
                                     <span class="input-group-text rounded-0" id="basic-addon1"><i class="fa fa-calendar-alt"></i></span>
@@ -147,7 +121,7 @@
                             </div>
                         </div>
                         <div class="col-md-6 mb-3">
-                            <label class="font-weight-bold">Hora de termino</label>
+                            <label class="font-weight-bold">Hora de término</label>
                             <div class="input-group">
                                 <div class="input-group-prepend">
                                     <span class="input-group-text rounded-0" id="basic-addon1"><i class="far fa-clock"></i></span>
@@ -156,7 +130,7 @@
                             </div>
                         </div>
                     </div>
-                    
+
                     <div class="row">
                         <div class="col-md-8 mb-3">
                             <label class="font-weight-bold">Pendiente(s)</label>
@@ -177,7 +151,7 @@
                             </div>
                         </div>
                     </div>
-                    
+
                     <div class="row justify-content-center">
                         <div class="col-md-3 mb-3">
                             <button type="submit" class="btn btn-danger btn-block rounded-0"><i class="fa fa-sign-in-alt"></i> Registrar</button>
@@ -185,42 +159,42 @@
                     </div>
                 </form>
             </div>
-            
+
             <script type="text/javascript">
                 /*function cambiar_equipos()
                 {
                     familia=document.getElementById("familia").value;
                     window.location.href="<?php //echo site_url('Principal/registrar_trabajo?f='); ?>"+familia;
                 }*/
-                
+
                 function set_turno()
                 {
                     hora_inicio=document.getElementById("hora_inicio").value;
-                    
+
                     if (hora_inicio>='08:00:00' && hora_inicio<='15:59:99')
                     {
                         document.getElementById("turno").selectedIndex = 1;
                     }
-                    
+
                     if (hora_inicio>='16:00:00' && hora_inicio<='23:59:99')
                     {
                         document.getElementById("turno").selectedIndex = 2;
                     }
-                    
+
                     if (hora_inicio>='00:00:00' && hora_inicio<='07:59:99')
                     {
                         document.getElementById("turno").selectedIndex = 3;
                     }
                 }
-                
+
                 function validar_fecha()
                 {
                     fecha_inicio=document.getElementById("fecha_inicio").value;
                     fecha_termino=document.getElementById("fecha_termino").value;
-                    
+
                     if (fecha_termino<fecha_inicio)
                     {
-                        alert("La fecha de termino debe ser mayor o igual a la de inicio");
+                        alert("La fecha de término debe ser mayor o igual a la de inicio");
                         document.getElementById("fecha_termino").value = "";
                     }
                     else if (fecha_termino==fecha_inicio)
@@ -228,40 +202,24 @@
                         validar_tiempo();
                     }
                 }
-                
+
                 function validar_tiempo()
                 {
                     fecha_inicio=document.getElementById("fecha_inicio").value;
                     fecha_termino=document.getElementById("fecha_termino").value;
                     hora_inicio=document.getElementById("hora_inicio").value;
                     hora_termino=document.getElementById("hora_termino").value;
-                    
+
                     if (fecha_termino==fecha_inicio)
                     {
                         if (hora_termino<hora_inicio)
                         {
-                            alert("La hora de termino debe ser mayor o igual a la de inicio");
-                            document.getElementById("hora_termino").value = "";   
+                            alert("La hora de término debe ser mayor o igual a la de inicio");
+                            document.getElementById("hora_termino").value = "";
                         }
                     }
                 }
             </script>
-            
-            
+
+
         <!-- /BODY  -->
-        
-       
-                          <!--<div class="tab-pane fade show active" id="list-home" role="tabpanel" aria-labelledby="list-home-list">
-                                <div class="row mt-4">
-                                    <div class="col-md-12">
-                                        <div class="card">
-                                            <h5 class="card-header">Featured</h5>
-                                            <div class="card-body">
-                                                <h5 class="card-title">Special title treatment</h5>
-                                                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                                                <a href="#" class="btn btn-primary">Go somewhere</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>-->

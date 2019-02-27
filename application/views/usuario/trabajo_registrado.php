@@ -1,14 +1,12 @@
     <body>
-        
         <!-- BODY -->
             <div class="container">
-                            
                 <div class="row justify-content-center my-4">
                     <h1 class="display-3">
                         ¡El trabajo se registró con éxito!
                     </h1>
                 </div>
-                
+
                 <div class="row justify-content-center my-3">
                     <div class="col-md-3 mb-3">
                         <a href="<?php echo site_url('Principal/registrar_trabajo'); ?>">
@@ -19,7 +17,7 @@
                         <button type="button" class="btn btn-warning btn-lg btn-block">Página principal</button>
                     </div>-->
                 </div>
-                
+
                 <div class="row justify-content-center mt-5">
                     <h3>Últimos trabajos resgistrados</h3>
                     <div class="table-responsive">
@@ -56,5 +54,4 @@
                         </table>
                     </div>
                 </div>
-                
             </div>

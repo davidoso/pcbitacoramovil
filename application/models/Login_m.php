@@ -3,7 +3,7 @@
     {
         public function iniciar_sesion($usuario, $contra)
         {
-            $var=$this->db->query("
+            $var = $this->db->query("
                 SELECT *
                 FROM usuario
                 WHERE id='$usuario' and pass='$contra'

@@ -1,6 +1,6 @@
 <?php
     class Usuario_m extends CI_Model
-    {        
+    {
         public function get_last_10_trabajos()
         {
             $var=$this->db->query("
@@ -16,11 +16,11 @@
             ");
             return $var->result();
         }
-        
+
         public function get_trabajo($id)
         {
             $var=$this->db->query("
-                SELECT 
+                SELECT
                     t.id_trabajo as id,
                     t.tra_familia as familia,
                     t.tra_equipo as equipo,
@@ -42,9 +42,9 @@
             ");
             return $var->result();
         }
-        
+
         /* -------------------------------------------------------------- Filtros -------------------------------------------------------------- */
-        
+
         public function get_111($fi, $ft, $fa)
         {
             $var=$this->db->query("
@@ -66,7 +66,7 @@
             ");
             return $var->result();
         }
-        
+
         public function get_110($fi, $ft)
         {
             $var=$this->db->query("
@@ -88,7 +88,7 @@
             ");
             return $var->result();
         }
-        
+
         public function get_101($fi, $fa)
         {
             $var=$this->db->query("
@@ -110,7 +110,7 @@
             ");
             return $var->result();
         }
-        
+
         public function get_100($fi)
         {
             $var=$this->db->query("
@@ -132,7 +132,7 @@
             ");
             return $var->result();
         }
-        
+
         public function get_011($ft, $fa)
         {
             $var=$this->db->query("
@@ -154,7 +154,7 @@
             ");
             return $var->result();
         }
-        
+
         public function get_010($ft)
         {
             $var=$this->db->query("
@@ -176,7 +176,7 @@
             ");
             return $var->result();
         }
-        
+
         public function get_001($fa)
         {
             $var=$this->db->query("
@@ -198,7 +198,7 @@
             ");
             return $var->result();
         }
-        
+
         public function get_trabajos_filtro($filtro)
         {
             $q="SELECT
@@ -216,67 +216,66 @@
                 FROM trabajo t
                 ".$filtro."
                 ORDER BY t.tra_inicio DESC";
-            
+
             $var=$this->db->query($q);
             return $var->result();
         }
-        
+
         /* -------------------------------------------------------------- /Filtros -------------------------------------------------------------- */
-        
-        public function insert_trabajo($familia,$equipo,$inicio,$turno,$descripcion,$termino,$pendientes,$usuario,$personal)
+
+        public function insert_trabajo($familia, $equipo, $inicio, $turno, $descripcion, $termino, $pendientes, $usuario, $personal)
         {
             $this->db->query("
                 call spInsertTrabajo('$familia','$equipo','$inicio','$turno','$descripcion','$termino','$pendientes','$usuario','$personal')
             ");
         }
-        
-        public function update_trabajo($id,$familia,$equipo,$inicio,$turno,$descripcion,$termino,$pendientes,$usuario,$personal)
+
+        public function update_trabajo($id, $familia, $equipo, $inicio, $turno, $descripcion, $termino, $pendientes, $usuario, $personal)
         {
             $this->db->query("
                 call spUpdateTrabajo('$id','$familia','$equipo','$inicio','$turno','$descripcion','$termino','$pendientes','$usuario','$personal')
             ");
         }
-        
-        public function delete_trabajo($trabajo,$opcion)
+
+        public function delete_trabajo($trabajo, $opcion)
         {
             $this->db->query("
                 call spUDeleteTrabajo('$trabajo','$opcion')
             ");
         }
-        
-        
+
         /* -------------------------------------------------------------- API WEB -------------------------------------------------------------- */
-        
+
         public function get_familias()
         {
-            $ch = curl_init(); 
-            curl_setopt($ch, CURLOPT_URL, "http://vadaexterno:8080/wsAutEmp/Service1.asmx/FamiliasEquipos"); 
+            $ch = curl_init();
+            curl_setopt($ch, CURLOPT_URL, "http://vadaexterno:8080/wsAutEmp/Service1.asmx/FamiliasEquipos");
             curl_setopt($ch, CURLOPT_POST, 1); //se puede comentar y de todos modos jala
             curl_setopt($ch, CURLOPT_CUSTOMREQUEST,"POST");
             curl_setopt($ch, CURLOPT_POSTFIELDS,"");
-	    	curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1); 
+	    	curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 			$output = curl_exec($ch); // la variable output contiene el json raw
-            
+
             $data=json_decode($output);
-            
+
             return $data;
         }
-        
+
         public function get_equipos($familia)
         {
-            $ch = curl_init(); 
-            curl_setopt($ch, CURLOPT_URL, "http://vadaexterno:8080/wsAutEmp/Service1.asmx/EquiposFamilia"); 
+            $ch = curl_init();
+            curl_setopt($ch, CURLOPT_URL, "http://vadaexterno:8080/wsAutEmp/Service1.asmx/EquiposFamilia");
             curl_setopt($ch, CURLOPT_POST, 1); //se puede comentar y de todos modos jala
             curl_setopt($ch, CURLOPT_CUSTOMREQUEST,"POST");
             curl_setopt($ch, CURLOPT_POSTFIELDS,"familia=$familia");
-	    	curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1); 
+	    	curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 			$output = curl_exec($ch); // la variable output contiene el json raw
-            
+
             $data=json_decode($output);
-            
+
             return $data;
         }
-        
+
         /* -------------------------------------------------------------- /API WEB -------------------------------------------------------------- */
     }
 ?>

@@ -1,16 +1,14 @@
     <body>
-        
         <!-- BODY -->
             <div class="container">
-                            
                 <div class="row justify-content-center my-4">
                     <div class="col-md-12">
                         <h2>Modificar trabajo</h2>
                     </div>
                 </div>
-                
+
                 <form role="form" method="POST" action="<?php echo site_url('Principal/update_trabajo?t=').$trabajo[0]->id; ?>">
-                    
+
                     <div class="row">
                         <div class="col-md-6 mb-3">
                             <label class="font-weight-bold">Familia</label>
@@ -18,9 +16,9 @@
                                 <div class="input-group-prepend">
                                     <span class="input-group-text rounded-0" id="basic-addon1"><i class="fa fa-users"></i></span>
                                 </div>
-                             
+
                                     <input type="text" class="form-control rounded-0"  id="familia" name="familia"  value="<?php echo $this->input->get('f'); ?>" disabled>
-                                   
+
                             </div>
                         </div>
                         <div class="col-md-6 mb-3">
@@ -29,7 +27,7 @@
                                 <div class="input-group-prepend">
                                     <span class="input-group-text rounded-0" id="basic-addon1"><i class="fas fa-sitemap"></i></span>
                                 </div>
-                               
+
                                   <input type="text" class="form-control rounded-0"  id="equipo" name="equipo"  value="<?php echo $trabajo[0]->equipo ; ?>" disabled>
                             </div>
                         </div>
@@ -41,9 +39,9 @@
                                 </div>
                                 <input type="text" class="form-control rounded-0" name="usuario" placeholder="Clave" aria-describedby="basic-addon1">
                             </div>
-                        </div>-->    
+                        </div>-->
                     </div>
-                        
+
                     <div class="row">
                         <div class="col-md-5 mb-3">
                             <label class="font-weight-bold">Fecha de inicio</label>
@@ -83,7 +81,7 @@
                             </div>
                         </div>
                     </div>
-                    
+
                     <div class="row">
                         <div class="col-md-12 mb-3">
                             <label class="font-weight-bold">Descripción</label>
@@ -95,10 +93,10 @@
                             </div>
                         </div>
                     </div>
-                    
+
                     <div class="row">
                         <div class="col-md-6 mb-3">
-                            <label class="font-weight-bold">Fecha de termino</label>
+                            <label class="font-weight-bold">Fecha de término</label>
                             <div class="input-group">
                                 <div class="input-group-prepend">
                                     <span class="input-group-text rounded-0" id="basic-addon1"><i class="fa fa-calendar-alt"></i></span>
@@ -107,7 +105,7 @@
                             </div>
                         </div>
                         <div class="col-md-6 mb-3">
-                            <label class="font-weight-bold">Hora de termino</label>
+                            <label class="font-weight-bold">Hora de término</label>
                             <div class="input-group">
                                 <div class="input-group-prepend">
                                     <span class="input-group-text rounded-0" id="basic-addon1"><i class="far fa-clock"></i></span>
@@ -116,7 +114,7 @@
                             </div>
                         </div>
                     </div>
-                    
+
                     <div class="row">
                         <div class="col-md-8 mb-3">
                             <label class="font-weight-bold">Pendiente(s)</label>
@@ -137,7 +135,7 @@
                             </div>
                         </div>
                     </div>
-                    
+
                     <div class="row justify-content-center">
                         <div class="col-md-3 mb-3">
                             <button type="submit" class="btn btn-danger btn-block rounded-0"><i class="fa fa-sign-in-alt"></i> Aplicar cambios</button>
@@ -145,7 +143,7 @@
                     </div>
                 </form>
             </div>
-            
+
             <script type="text/javascript">
                 function cambiar_equipos()
                 {
@@ -153,22 +151,6 @@
                     window.location.href="<?php echo site_url('Principal/editar_trabajo?t=').$trabajo[0]->id.'&f='; ?>"+familia;
                 }
             </script>
-            
-            
+
+
         <!-- /BODY  -->
-        
-       
-                          <!--<div class="tab-pane fade show active" id="list-home" role="tabpanel" aria-labelledby="list-home-list">
-                                <div class="row mt-4">
-                                    <div class="col-md-12">
-                                        <div class="card">
-                                            <h5 class="card-header">Featured</h5>
-                                            <div class="card-body">
-                                                <h5 class="card-title">Special title treatment</h5>
-                                                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                                                <a href="#" class="btn btn-primary">Go somewhere</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>-->

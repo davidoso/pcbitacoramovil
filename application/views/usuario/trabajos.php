@@ -1,17 +1,14 @@
     <body>
-        
         <!-- BODY -->
-            <div class="container">           
-                
+            <div class="container">
                 <div class="row justify-content-center my-4">
                     <h1>Trabajos registrados</h1>
                 </div>
-                    
                 <!-- Orden -->
                 <form role="form" id="filtro" action="<?php echo site_url('Principal/trabajos_registrados'); ?>" method="get">
                     <div class="row mt-3 align-items-end">
                         <div class="col-md-3 mb-3">
-                            <label class="font-weight-bold">Fecha Inicio</label>
+                            <label class="font-weight-bold">Fecha de inicio</label>
                             <div class="input-group">
                                 <div class="input-group-prepend">
                                     <span class="input-group-text rounded-0" id="basic-addon1"><i class="fa fa-calendar-alt"></i></span>
@@ -20,7 +17,7 @@
                             </div>
                         </div>
                         <div class="col-md-3 mb-3">
-                            <label class="font-weight-bold">Fecha término</label>
+                            <label class="font-weight-bold">Fecha de término</label>
                             <div class="input-group">
                                 <div class="input-group-prepend">
                                     <span class="input-group-text rounded-0" id="basic-addon1"><i class="fa fa-calendar-alt"></i></span>
@@ -44,7 +41,7 @@
                             <button type="button" class="btn btn-danger btn-block rounded-0 mt-3" onclick="limpiar()"><i class="fas fa-undo-alt"></i></button>
                         </div>
                     </div>
-                    
+
                     <div class="row mt-1 align-items-end">
                         <div class="col-md-3 mb-3">
                             <label class="font-weight-bold">Familia</label>
@@ -76,7 +73,7 @@
                             </div>
                         </div>
                         <div class="col-md-6 mb-3">
-                            <label class="font-weight-bold">Busqueda en descripción del trabajo</label>
+                            <label class="font-weight-bold">Búsqueda en descripción del trabajo</label>
                             <div class="input-group">
                                 <div class="input-group-prepend">
                                     <span class="input-group-text rounded-0" id="basic-addon1"><i class="fas fa-search-plus"></i></span>
@@ -87,7 +84,7 @@
                     </div>
                 </form>
                 <!-- /Orden -->
-                
+
                 <div class="row justify-content-center mt-3">
                     <div class="table-responsive">
                         <table class="table table-hover">
@@ -119,7 +116,7 @@
                                     {
                                         $descripcion=$t->descripcion;
                                     }
-                                    
+
                                     if (strlen($t->personal)>50) // comprueba si la descripción contiene más de 250 caracteres
                                     {
                                         // Toma los primeros 250 caracteres de la cadena y lo almacena en una variable llamada "$descripcion"
@@ -154,9 +151,9 @@
                         </table>
                     </div>
                 </div>
-                
+
             </div>
-            
+
             <script type="text/javascript">
                 function limpiar() {
                     document.getElementById("fi").valueAsDate = null;
@@ -166,15 +163,15 @@
                     document.getElementById("us").value='';
                     document.getElementById("des").value='';
                 }
-                
+
                 function validar_fecha()
                 {
                     fecha_inicio=document.getElementById("fi").value;
                     fecha_termino=document.getElementById("ft").value;
-                    
+
                     if (fecha_termino<fecha_inicio)
                     {
-                        alert("La fecha de termino debe ser mayor o igual a la de inicio");
+                        alert("La fecha de término debe ser mayor o igual a la de inicio");
                         document.getElementById("ft").value = "";
                     }
                 }

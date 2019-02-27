@@ -1,8 +1,6 @@
     <body>
-        
         <!-- BODY -->
             <div class="container">
-                
                 <div class="row mt-4 d-none d-md-flex">
                     <!--<div class="col-md-2 mt-3">
                         <button type="button" class="btn btn-info btn-block" onclick="goBack()"><i class="fas fa-arrow-left"></i> Volver</button>
@@ -12,7 +10,7 @@
                         {
                             if ($this->session->userdata('admin')!=null || $trabajo[0]->usuario==$this->session->userdata('usuario'))
                             {
-                                
+
                     ?>
                     <div class="col-md-2 mt-3">
                         <a href="<?php echo site_url('Principal/editar_trabajo?t=').$trabajo[0]->id.'&f='.$trabajo[0]->familia; ?>" class="btn btn-warning btn-block rounded-0"><i class="far fa-edit"></i> Editar</a>
@@ -20,7 +18,7 @@
                     <div class="col-md-1 mt-3">
                         <button class="btn btn-danger btn-block rounded-0" data-toggle="modal" data-target="#eliminar"><i class="fas fa-trash-alt"></i></button>
                     </div>
-                    <?php   
+                    <?php
                             } // cierra if de admin o dueño del registro
                         } // cierra if (si el trabajo sigue activo)
                         else
@@ -33,11 +31,11 @@
                         } // cierra else (si el trabajo ha sido eliminado)
                     ?>
                 </div>
-                
+
                 <div class="row mt-2 justify-content-center">
                     <h4><?php echo $trabajo[0]->familia.' - '.$trabajo[0]->equipo; ?></h4>
                 </div>
-                
+
                 <div class="row mt-3 justify-content-center">
                     <div class="table-responsive">
                         <table class="table">
@@ -62,7 +60,7 @@
                         </table>
                     </div>
                 </div>
-                
+
                 <div class="row mt-3">
                     <div class="col-md-8">
                         <h5>Descripcion: </h5>
@@ -73,14 +71,14 @@
                         <p><?php echo $trabajo[0]->pendiente; ?></p>
                     </div>
                 </div>
-               
+
                 <div class="row mt-3">
                     <div class="col-md-12">
                         <h5>Personal: </h5>
                         <p><?php echo $trabajo[0]->personal; ?></p>
                     </div>
                 </div>
-                
+
                 <div class="row my-3 d-block d-md-none">
                     <?php
                         if ($trabajo[0]->estatus=='1')
@@ -92,7 +90,7 @@
                     <div class="col-md-1 mt-3">
                         <button class="btn btn-danger btn-block rounded-0" data-toggle="modal" data-target="#eliminar"><i class="fas fa-trash-alt"></i></button>
                     </div>
-                    <?php   
+                    <?php
                         } // cierra if (si el trabajo sigue activo)
                         else
                         {
@@ -104,9 +102,9 @@
                         } // cierra else (si el trabajo ha sido eliminado)
                     ?>
                 </div>
-                               
+
             </div>
-            
+
             <!-- Modal -->
             <div class="modal fade" id="eliminar" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered" role="document">
