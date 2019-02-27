@@ -63,7 +63,7 @@
 
                 <div class="row mt-3">
                     <div class="col-md-8">
-                        <h5>Descripcion: </h5>
+                        <h5>Descripción: </h5>
                         <p><?php echo $trabajo[0]->descripcion; ?></p>
                     </div>
                     <div class="col-md-4">

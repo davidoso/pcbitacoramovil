@@ -138,7 +138,7 @@
                                 <!--<div class="input-group-prepend">
                                     <span class="input-group-text rounded-0" id="basic-addon1"><i class="fa fa-pause"></i></span>
                                 </div>-->
-                                <textarea class="form-control rounded-0" name="pendientes" placeholder="Si no hay pendientes, deje el campo vacio." aria-describedby="basic-addon1" rows="4"></textarea>
+                                <textarea class="form-control rounded-0" name="pendientes" placeholder="Si no hay pendientes, deje este campo vacío" aria-describedby="basic-addon1" rows="4"></textarea>
                             </div>
                         </div>
                        <div class="col-md-4 mb-3">
