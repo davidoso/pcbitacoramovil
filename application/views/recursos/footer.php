@@ -8,7 +8,7 @@
 
     </body>
 
-    <!-- Custom Script -->
+    <!-- Custom script -->
     <script type="text/javascript">
         $(document).ready(function($) {
           var list_target_id = 'equipo'; //first select list ID

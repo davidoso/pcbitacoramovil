@@ -19,7 +19,7 @@ class Login extends CI_controller {
         // Initiate the cURL object (open connection)
         $curl = curl_init();
 
-        curl_setopt($curl, CURLOPT_URL, "http://vadaexterno:8080/wsAutEmp/Service1.asmx/Valida_Usuario");	// URL to fetch
+        curl_setopt($curl, CURLOPT_URL, "http://vadaexterno:8080/wsAutEmp/Service1.asmx/Valida_Usuario");	    // URL to fetch
         curl_setopt($curl, CURLOPT_POST, TRUE);														// TRUE to do a regular HTTP POST (most commonly used by HTML forms)
         curl_setopt($curl, CURLOPT_CUSTOMREQUEST, "POST");											// Request type (POST, DELETE, GET, PUT, HEAD)
         curl_setopt($curl, CURLOPT_POSTFIELDS, "usuario=$usuario&contrasena=$contrasena");          // Data to post passed as a urlencoded string or as an associative array
@@ -35,19 +35,19 @@ class Login extends CI_controller {
         $this->iniciar_sesion($output);
     }
 
-    public function iniciar_sesion($datos_usuario)
+    private function iniciar_sesion($datos_usuario)
     {
         if (count($datos_usuario) > 0)
         {
             $this->session->set_userdata('usuario', $datos_usuario[0]->USUARIOID);
             $this->session->set_userdata('nombre', $datos_usuario[0]->NOMBRE);
 
-            if ($this->es_admin($datos_usuario[0]->GRUPOSAD) == true)
+            /*if ($this->es_admin($datos_usuario[0]->GRUPOSAD) == true)
             {
                 // Escribir aquí lo que se hará si es administrador
                 $this->session->set_userdata('admin', 1);
                 //redirect('Administrador');
-            }
+            }*/
             redirect('Principal');
         }
         redirect('Login');
@@ -59,7 +59,7 @@ class Login extends CI_controller {
         redirect('Login#SesionCerrada', 'refresh');
     }
 
-    public function es_admin($cadena) // Determinar si el usuario es administrador
+    private function es_admin($cadena) // Determinar si el usuario es administrador
     {
         $array = explode(",", $cadena);
         $flag = false;
@@ -76,13 +76,19 @@ class Login extends CI_controller {
 
     public function get_puesto()
     {
+        // Bloquear acceso directo a la función o mediante URL en el navegador
+		if($this->input->server('REQUEST_METHOD') != 'POST') {
+			$this->session->sess_destroy();
+			redirect('Login#SesionNoIniciada', 'refresh');
+        }
+
         // Post fields required by OBTENER_PUESTO webservice
         $usuario = $this->input->post('usuario');
 
         // Initiate the cURL object (open connection)
         $curl = curl_init();
 
-        curl_setopt($curl, CURLOPT_URL, "http://vadaexterno:8080/wsAutEmp/Service1.asmx/OBTENER_PUESTO");	// URL to fetch
+        curl_setopt($curl, CURLOPT_URL, "http://vadaexterno:8080/wsAutEmp/Service1.asmx/OBTENER_PUESTO");	    // URL to fetch
         curl_setopt($curl, CURLOPT_POST, TRUE);														// TRUE to do a regular HTTP POST (most commonly used by HTML forms)
         curl_setopt($curl, CURLOPT_CUSTOMREQUEST, "POST");											// Request type (POST, DELETE, GET, PUT, HEAD)
         curl_setopt($curl, CURLOPT_POSTFIELDS, "usuario=$usuario");                                 // Data to post passed as a urlencoded string or as an associative array

@@ -14,12 +14,12 @@
 
             <div class="row justify-content-center">
                 <div class="col-md-5">
-                    <form role="form" method="POST" action="<?php echo site_url('Login/validar_usuario'); ?>">
+                    <form role="form" method="POST" action="index.php/Login/validar_usuario">
                         <div class="input-group mb-3">
                             <div class="input-group-prepend">
                                 <span class="input-group-text rounded-0" id="basic-addon1" title="Usuario"><i class="fa fa-fw fa-user"></i></span>
                             </div>
-                            <input type="text" class="form-control rounded-0" id="usuario" name="usuario" placeholder="Usuario" required>
+                            <input type="text" class="form-control rounded-0" id="usuario" name="usuario" placeholder="Usuario" required autofocus>
                         </div>
                         <div class="input-group mb-3">
                             <div class="input-group-prepend">
@@ -39,6 +39,6 @@
             </div>
 
             <div class="row justify-content-center mt-5">
-                <p class="text-muted">Peña Colorada | Tecnologías de Información</p>
+                <p class="text-white">Peña Colorada | Tecnologías de Información</p>
             </div>
         </div>
