@@ -16,12 +16,12 @@
                 </ul>
 
                 <!-- Información del usuario -->
-                <h6 class="text-white"><i class="fa fa-user-circle mr-2"></i><?php echo $this->session->userdata('nombre'); ?></h6>
+                <h6 class="text-white"><i class="fas fa-fw fa-user-circle mr-2"></i><?php echo $this->session->userdata('nombre'); ?></h6>
                 <!-- /Información del usuario -->
 
                 <!-- Cerrar sesión -->
                 <a href="<?php echo site_url('Login/cerrar_sesion'); ?>">
-                    <h6 class="text-warning ml-3"><i class="fas fa-sign-out-alt mr-2"></i>Cerrar sesión</h6>
+                    <h6 class="text-warning ml-3"><i class="fas fa-fw fa-sign-out-alt mr-2"></i>Cerrar sesión</h6>
                 </a>
                 <!-- /Cerrar sesión -->
             </div>

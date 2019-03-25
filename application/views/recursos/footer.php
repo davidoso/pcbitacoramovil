@@ -16,7 +16,7 @@
           var initial_target_html = '<option value="">Elige una familia</option>'; //Initial prompt for target select
 
           $('#'+list_target_id).html(initial_target_html); //Give the target select the prompt option
-          $('#'+list_select_id).prop('selectedIndex', 0);; //Gives to select to its first option (by index)
+          $('#'+list_select_id).prop('selectedIndex', 0);; //Change select to its first option (by index)
 
           $('#'+list_select_id).change(function(e) {
             //Grab the chosen value on first select list change
